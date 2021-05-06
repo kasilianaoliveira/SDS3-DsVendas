@@ -1,27 +1,45 @@
 package com.devsuperior.dsvendas.dto;
 
-import com.devsuperior.dsvendas.entities.Seller;
+import com.devsuperior.dsvendas.entities.Sale;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 //obj q nao está ligado com nada
-public class SellerDTO implements Serializable { //converte
+public class SaleDTO implements Serializable { //converte
 	private static final long serialVersionUID = 1L;
 	private Long id;
-	private String name;
+	private Integer visited;
+	private Integer deals;
+	private Double amount;
+	private LocalDate date;
 
-	public SellerDTO (){
+	private SellerDTO seller;
+
+	public SaleDTO() {
 
 	}
 
-	public SellerDTO(Long id, String name) {
+	public SaleDTO(Long id, Integer visited, Integer deals, Double amount, LocalDate date, SellerDTO seller) {
 		this.id = id;
-		this.name = name;
+		this.visited = visited;
+		this.deals = deals;
+		this.amount = amount;
+		this.date = date;
+		this.seller = seller;
 	}
 
-	public SellerDTO(Seller entity) {
+	public SaleDTO(Sale entity) {
 		id = entity.getId();
-		name = entity.getName();
+		visited = entity.getVisited();
+		deals = entity.getDeals();
+		amount = entity.getAmount();
+		date = entity.getDate();
+		seller = new SellerDTO(entity.getSeller());
+	}
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
 	}
 
 	public Long getId() {
@@ -32,11 +50,43 @@ public class SellerDTO implements Serializable { //converte
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public Integer getVisited() {
+		return visited;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setVisited(Integer visited) {
+		this.visited = visited;
+	}
+
+	public Integer getDeals() {
+		return deals;
+	}
+
+	public void setDeals(Integer deals) {
+		this.deals = deals;
+	}
+
+	public Double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Double amount) {
+		this.amount = amount;
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
+	public SellerDTO getSeller() {
+		return seller;
+	}
+
+	public void setSeller(SellerDTO seller) {
+		this.seller = seller;
 	}
 }
