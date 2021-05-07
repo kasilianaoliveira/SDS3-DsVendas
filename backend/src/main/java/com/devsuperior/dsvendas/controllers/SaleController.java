@@ -38,4 +38,24 @@ public class SaleController {
 		List<SaleSuccessDTO> list = service.successGroupedBySeller();
 		return ResponseEntity.ok(list);
 	}
+
+	/*
+	*@PutMapping(value="/{id}")
+public ResponseEntity update(@PathVariable("id") long id, @RequestBody SaleDTO sale) {
+   return repository.findById(id)
+           .map(record -> {
+               record.setName(contact.getName());
+               record.setEmail(contact.getEmail());
+               record.setPhone(contact.getPhone());
+               Contact updated = repository.save(record);
+               return ResponseEntity.ok().body(updated);
+           }).orElse(ResponseEntity.notFound().build());
+}
+	*
+	*
+	*
+	*
+	* */
+
+	//Adicionar metodo PUT, POST
 }

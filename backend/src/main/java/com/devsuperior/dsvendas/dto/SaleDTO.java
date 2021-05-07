@@ -6,6 +6,8 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 //obj q nao está ligado com nada
+
+//DTO se utiliza para nao usar as entities, substitui elas
 public class SaleDTO implements Serializable { //converte
 	private static final long serialVersionUID = 1L;
 	private Long id;
