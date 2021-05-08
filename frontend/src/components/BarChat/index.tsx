@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { type } from 'node:os';
 import { useEffect, useState } from 'react';
 import Chart from 'react-apexcharts';
 import { SaleSuccess } from 'types/sale';
@@ -62,7 +61,7 @@ function BarChat (){
         }
     },
   };
-  
+
   return (
     <Chart
       options={{...options, xaxis:chartData.labels}}
